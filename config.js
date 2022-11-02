@@ -1,7 +1,7 @@
 // Put your own Twitter App keys here. See README.md for more detail.
 module.exports = {
-  consumer_key:         'JsebejmwUBeWwUPd0X8YPyxqe',
-  consumer_secret:      'JsebejmwUBeWwUPd0X8YPyxqe',
-  access_token:         'bhUTm5eauXlQyBmAVCZz3QN3QJOlCEmklI0qk4hal96kkd9txL',
-  access_token_secret:  'AAAAAAAAAAAAAAAAAAAAAEy9igEAAAAAz3uDbx4KdMyzTsuqR8BahBJE1CY%3DSDAEUqLYYga5g5kVmGsdZXppqBEzw0ZgMKxjRwR4N3HgTqgQQ7'
+  consumer_key:         'LijRHmqmrdieFuEx4WLapy5Ff',
+  consumer_secret:      'eInMyiNRZRamdjARxv2t3Qz3LL8JGmoZR2c30zNV0rG7HxpiZR',
+  access_token:         '1586034161395154944-D4UqzGBezbNuqzbaZ46TblqIU1AOum',
+  access_token_secret:  'nIR2D1ZHop2Qauiy03cqvOK49xHAg2qv1shoL0x0BIvJb'
 }
