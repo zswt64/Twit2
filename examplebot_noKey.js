@@ -8,7 +8,7 @@ NOTE: this script requires the Node.js modules inflection, request, wordfilter, 
 
 // DEBUG
 var debug = false;		// if we don't want it to post to Twitter! Useful for debugging!
-
+// testing stuff out
 // Wordnik stuff
 var WordnikAPIKey = 'YOUR WORDNIK API KEY HERE';
 var request = require('request');
