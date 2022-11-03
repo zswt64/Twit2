@@ -10,7 +10,7 @@ NOTE: this script requires the Node.js modules inflection, request, wordfilter, 
 var debug = false;		// if we don't want it to post to Twitter! Useful for debugging!
 // testing stuff out
 // Wordnik stuff
-var WordnikAPIKey = 'YOUR WORDNIK API KEY HERE';
+var WordnikAPIKey = '5n9terp6ususoehfh36a8cke0yfdvroprv6ww48m4osl5pm14';
 var request = require('request');
 var inflection = require('inflection');
 var pluralize = inflection.pluralize;
@@ -48,6 +48,18 @@ function nounUrl(minCorpusCount, limit) {
 	return "http://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=false&includePartOfSpeech=noun&minCorpusCount=" + minCorpusCount + "&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=5&maxLength=-1&limit=" + limit + "&api_key=" + WordnikAPIKey;
 }
 
+//related words wordnik function
+var url1 = "https://api.wordnik.com/v4/word.json/"
+
+var url2 = "/relatedWords?useCanonical=false&limitPerRelationshipType=10&api_key=5n9terp6ususoehfh36a8cke0yfdvroprv6ww48m4osl5pm14"
+
+function relatedWords(word) {
+	loadJSON(url1 + word + url2, gotData);
+}
+
+function gotData(data) {
+	println(data);
+}
 // Post a status update
 function tweet() {
 
@@ -121,7 +133,7 @@ function runBot() {
 	var d=new Date();
 	var ds = d.toLocaleDateString() + " " + d.toLocaleTimeString();
 	console.log(ds);  // date/time of the request	
-
+	relatedWords("worm");
 	// Get 200 nouns with minimum corpus count of 5,000 (lower numbers = more common words) 
 	request(nounUrl(5000,200), function(err, response, data) {
 		if (err != null) return;		// bail if no data
