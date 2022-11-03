@@ -1,0 +1,22 @@
+{
+  "name": "twit2",
+  "version": "1.0.0",
+  "description": "This bot retweets the latest tweet using the \"#mediaarts\" hashtag. It attempts to retweet once per hour.",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zswt64/Twit2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zswt64/Twit2/issues"
+  },
+  "homepage": "https://github.com/zswt64/Twit2#readme",
+  "dependencies": {
+    "twit": "^2.2.11"
+  }
+}
