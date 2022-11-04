@@ -36,7 +36,7 @@ function retweetLatest() {
 		// ...and then we tell Twitter we want to retweet it!
         // const textarr = retweetdata;
         for (var i = 0; i < 5; i++) {
-            T.post('statuses/retweet/' + data.statuses[i].id_str, {status: "#"+ i + " This is so cool" + imp_Info[i]}, function (error, response) {
+            T.post('statuses/retweet/' + data.statuses[i].id_str, {status: "#"+ i + " This is so cool " + imp_Info[i]}, function (error, response) {
                 if (response) {
                     console.log('Success! Check your bot, it should have retweeted something.')
                 }
