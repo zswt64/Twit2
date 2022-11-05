@@ -8,11 +8,11 @@ var T = new Twit(require('./config.js'));
 
 
 
+//variable to search through recent posts under #music
+var param = {q: "#music", count: 60, result_type: "recent"};
 
-var param = {q: "#barbz", count: 60, result_type: "recent"};
 
-
-
+//urls for the related words function from the wordnik api, 
 var url1 = "https://api.wordnik.com/v4/word.json/"
 "https://api.wordnik.com/v4/word.json/orange/relatedWords?useCanonical=false&relationshipTypes=rhyme&limitPerRelationshipType=10&api_key=5n9terp6ususoehfh36a8cke0yfdvroprv6ww48m4osl5pm14"
 var url2 = "/relatedWords?useCanonical=false&relationshipTypes=rhyme&limitPerRelationshipType=10&api_key=5n9terp6ususoehfh36a8cke0yfdvroprv6ww48m4osl5pm14"
@@ -25,7 +25,7 @@ var url2 = "/relatedWords?useCanonical=false&relationshipTypes=rhyme&limitPerRel
 
   
 
-
+//function that searched for #music posts, retweets one, and adds the statement, "this is a cool rhyme" then a list of rhyming words based on the word parameter
 function tweetMe(word) {
   T.get('search/tweets', param, function (error, data) {
     num = Math.random(60)
@@ -55,10 +55,10 @@ function tweetMe(word) {
 }
 
 
-
+//main method where method calls will be made
 function runStuff(wordToGrab) {
 
-
+//converting the wordnik api to an object we can use
   fetch(url1 + wordToGrab + url2)
   .then(res => res.json())
   .then(out => {
@@ -66,6 +66,7 @@ function runStuff(wordToGrab) {
     temp = out[0]["words"];
     console.log(temp);
 
+    //call to tweete function
     tweetMe(temp);
 
 
@@ -73,6 +74,7 @@ function runStuff(wordToGrab) {
 
 
 }
+//main method call
 runStuff("shark");
 
 //whatever word we are rhyming with gets passed into main function
